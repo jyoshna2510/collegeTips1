@@ -1,7 +1,7 @@
 📸 CollegeTips Gallery
 Welcome to the CollegeTips Gallery, a vibrant, youth-centric photo showcase built with HTML, CSS, and JavaScript. This gallery is designed for CollegeTips' official website to display team moments, creative campaigns, and behind-the-scenes fun — all in a stylish and interactive layout.
 
-🌐 Live Website: https://collegetipgallery.netlify.app/
+🌐 Live Website: https://collegetipgallery.jyoshna.app/
 
 🎯 Features
 🧩 Filterable Categories
