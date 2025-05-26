@@ -1,0 +1,258 @@
+/* General Body & Typography */
+body {
+  font-family: 'Inter', sans-serif; /* Using Inter font for a modern look */
+  padding: 20px;
+  margin: 0;
+  /* background: #f8f9fa; Very light grey background */
+   background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1);
+  color: #343a40; /* Darker text for readability */
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+/* Custom Scrollbar Styles for Webkit browsers */
+/* This ensures a consistent, beautiful scrollbar across the UI */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e9ecef; /* Lighter track */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #adb5bd; /* Medium grey thumb */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6c757d; /* Darker grey on hover */
+}
+
+/* Header Section */
+.gallery-header {
+  text-align: center;
+  margin-bottom: 50px; /* Increased margin for more breathing room */
+  padding: 30px 20px; /* More padding */
+  /* background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); Elegant purple-blue gradient */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 20px; /* More pronounced rounded corners */
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* Stronger, softer shadow */
+  animation: fadeInDown 1s ease-out; /* Smooth entrance animation */
+  position: relative; /* For potential future elements */
+  overflow: hidden; /* Ensures gradient stays within bounds */
+}
+
+.gallery-header::before { /* Subtle background pattern/overlay */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+  background-size: 200px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+
+.gallery-header h1 {
+  font-size: 3.8rem; /* Even larger, more impactful font */
+  margin-bottom: 15px;
+  font-weight: 900; /* Extra bold */
+  letter-spacing: -1px; /* Tighter letter spacing */
+  text-shadow: 3px 3px 8px rgba(0,0,0,0.3); /* Deeper text shadow */
+}
+
+.gallery-header p {
+  font-size: 1.3rem; /* Slightly larger paragraph text */
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.95;
+  font-weight: 300; /* Lighter weight for contrast */
+}
+
+/* Filter Buttons */
+.filter-buttons {
+  text-align: center;
+  margin-bottom: 40px; /* More space below buttons */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px; /* Increased gap */
+}
+
+.filter-buttons button {
+  padding: 14px 32px; /* More generous padding */
+  border: none; /* No border for a cleaner look */
+  /* background: #e9ecef; Light background for inactive */
+  background: #45b7d1;
+  color: #fbfbfc; /* Dark grey text */
+  cursor: pointer;
+  border-radius: 35px; /* Even more rounded, pill-like */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* More sophisticated transition curve */
+  font-weight: 600;
+  font-size: 1.1rem; /* Slightly larger font */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  outline: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-buttons button::before { /* Subtle hover overlay */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: rgba(255, 255, 255, 0.1); */
+   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-out;
+}
+
+.filter-buttons button:hover::before {
+  transform: scaleX(1);
+}
+
+.filter-buttons button.active,
+.filter-buttons button:hover {
+  /* background: linear-gradient(45deg, #007bff, #0056b3); Blue gradient for active/hover */
+   background: linear-gradient(45deg, #ff6b6b,#4ecdc4,);
+  color: #186f18;
+  transform: translateY(-5px) scale(1.03); /* More pronounced lift */
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4); /* Blue-tinted shadow */
+}
+
+/* Search Bar */
+.search-bar {
+  text-align: center;
+  margin-bottom: 40px; /* More space */
+}
+
+.search-bar input {
+  padding: 14px 25px; /* More padding */
+  width: 100%;
+  max-width: 600px; /* Wider search bar */
+  border: 1px solid #ced4da; /* Subtle border */
+  border-radius: 35px; /* Matches button roundedness */
+  font-size: 1.15rem; /* Larger font */
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.08); /* Deeper inset shadow */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  outline: none;
+  color: #495057;
+}
+
+.search-bar input::placeholder {
+  color: #868e96; /* Lighter placeholder text */
+}
+
+.search-bar input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.25); /* Glow effect on focus */
+}
+
+/* Gallery Grid */
+.gallery {
+  columns: 1;
+  column-gap: 2.5rem; /* Increased gap between columns */
+  max-width: 1400px; /* Even wider gallery for more photos per row */
+  margin: 0 auto;
+  padding: 0 20px; /* More horizontal padding */
+}
+
+@media (min-width: 600px) {
+  .gallery {
+    columns: 2;
+  }
+}
+@media (min-width: 900px) {
+  .gallery {
+    columns: 3;
+  }
+}
+@media (min-width: 1200px) {
+  .gallery {
+    columns: 4;
+  }
+}
+@media (min-width: 1500px) { /* New breakpoint for extra large screens */
+  .gallery {
+    columns: 5;
+  }
+}
+
+
+/* Photo Card (Item) */
+.item {
+  break-inside: avoid;
+  margin-bottom: 2.5rem; /* Increased margin between cards */
+  background: white;
+  border-radius: 18px; /* Slightly more rounded */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Softer, more spread shadow */
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative; /* For potential future elements */
+}
+
+.item:hover {
+  transform: translateY(-10px) scale(1.02); /* More pronounced lift */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25); /* Stronger, more diffused shadow */
+}
+
+.image-wrapper {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  height: 280px; /* Slightly taller cards for more image prominence */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smooth zoom transition */
+}
+
+/* Zoom feature while hovering images */
+.image-wrapper:hover img {
+  transform: scale(1.15); /* More noticeable zoom on hover */
+}
+
+/* Caption Overlay (inside card) */
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px; /* More padding */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0)); /* Darker gradient for better text contrast */
+  color: #fff;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none;
+  border-bottom-left-radius: 18px; /* Match item border-radius */
+  border-bottom-right-radius: 18px; /* Match item border-radius */
+  font-weight: 500;
+}
+
+.image-wrapper:hover .caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Modal Styling (Fullscreen Viewer) */
+.modal {
+  display: none;
+  position: fixed
+}

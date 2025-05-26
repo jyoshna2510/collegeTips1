@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CollegeTips Gallery</title>
+  <meta name="description" content="Explore the official CollegeTips gallery featuring team vibes, creative campaigns, behind-the-scenes shots, and more.">
+  <meta property="og:image" content="https://www.collegetips.in/images/logo.jpg" />
+  <link rel="icon" href="https://www.collegetips.in/images/logo.jpg" type="image/png" />
+  <link rel="stylesheet" href="./collegetips.css" />
+</head>
+<body>
+
+  <header class="gallery-header">
+    <h1>CollegeTips Gallery</h1>
+    <p>Get a glimpse into the CollegeTips world and our vibrant culture of hard work, fun, and creativity.
+      Capturing our amazing journey, one awesome moment at a time! From team vibes to creative campaigns - this is our story in pictures.
+    </p>
+  </header>
+
+  <div class="filter-buttons">
+    <button data-filter="all" class="active">All Moments ✨</button>
+    <button data-filter="face">Our Face 😊</button>
+    <button data-filter="team">Team Vibes 🤝</button>
+    <button data-filter="campaigns">Creative Campaigns 🎨</button>
+    <button data-filter="fun">Work Hard, Play Hard 🥳</button>
+    <button data-filter="bts">Behind-The-Scenes 🎥</button>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search photos by caption...">
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <button id="prevBtn" class="nav-btn prev-btn">&larr;</button>
+    <div class="modal-content-container">
+      <img class="modal-content" id="modal-img" />
+      <div id="modal-caption"></div>
+    </div>
+    <button id="nextBtn" class="nav-btn next-btn">&rarr;</button>
+
+    <div class="zoom-controls">
+      <button id="zoomInBtn" class="zoom-btn">+</button>
+      <button id="zoomOutBtn" class="zoom-btn">-</button>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
